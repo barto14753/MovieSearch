@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie-Search</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <body class="text-center">
+        <h1 class="mb-4" >Movie Search</h1>
+        <form action="/find" method="POST" class="mx-auto w-50">
+          <div class="mb-5">
+              <label class="form-label">Movie</label>
+              <input type="text" class="form-control" id="" name="movie" placeholder="Title">
+          </div>
+          <div class="mb-3">
+              <label class="form-label"><a class="font-weight-bold">The MovieDB</a> rating importance</label>
+              <input type="range" class="form-control-range" id="movieDB" name="movieDB" min="0" max="1" value="1" step="0.05" onchange="updateMovieDB(this.value);" required>
+              <a id="movieDB_input" value="">1</a>
+          </div>
+          <div class="mb-3">
+                <label class="form-label"><a class="font-weight-bold">IMDB</a> rating importance</label>
+                <input type="range" class="form-control-range" id="imdb" name="imdb" min="0" max="1" value="1" step="0.05" onchange="updateIMDB(this.value);" required>
+                <a id="imdb_input" value="">1</a>
+          </div>
+          <div class="mb-3">
+            <label class="form-label"><a class="font-weight-bold">RottenTomatoes</a> rating importance</label>
+            <input type="range" class="form-control-range" id="rotten" name="rotten" min="0" max="1" value="1" step="0.05" onchange="updateRotten(this.value);" required>
+            <a id="rotten_input" value="">1</a>
+          </div>
+          <div class="mb-3">
+            <label class="form-label"><a class="font-weight-bold">The Metacritic</a> rating importance</label>
+            <input type="range" class="form-control-range" id="metacritic" name="metacritic" min="0" max="1" value="1" step="0.05" onchange="updateMetacritic(this.value);" required>
+            <a id="metacritic_input" value="">1</a>
+          </div>
+          <div class="mb-3">
+            <label class="form-label"><a class="font-weight-bold">Metascore</a> rating importance</label>
+            <input type="range" class="form-control-range" id="metascore" name="metascore" min="0" max="1" value="1" step="0.05" onchange="updateMetascore(this.value);" required>
+            <a id="metascore_input" value="">1</a>
+          </div>
+          <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+</body>
+<script>
+  function updateMovieDB(val) { document.getElementById("movieDB_input").innerHTML=val;}
+  function updateIMDB(val) { document.getElementById("imdb_input").innerHTML=val;}
+  function updateRotten(val) { document.getElementById("rotten_input").innerHTML=val;}
+  function updateMetacritic(val) { document.getElementById("metacritic_input").innerHTML=val;}
+  function updateMetascore(val) { document.getElementById("metascore_input").innerHTML=val;}
+
+</script>
+</html>
